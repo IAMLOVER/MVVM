@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  
+  <div id="app">
+      <p v-text="msg"></p>
+      <p v-html="msg"></p>
+      <p> {{ msg }}</p>
+      <p>{{ dog.color }}</p>
+      <input type="text" v-model="dog.color">
+      <button v-on:click="clickFn">点我</button>
+  </div>
+
+  <script src="src/watcher.js"></script>
+  <script src="src/observer.js"></script>
+  <script src="src/compile.js"></script>
+  <script src="src/vue.js"></script>
+
+  <script>
+      var vm = new Vue({
+        el:'#app',
+        data: {
+            msg:'hello world',
+            dog:{
+              color: "黄色",
+              age: "10"
+            }
+        },
+        methods: {
+          clickFn() {
+            console.log(this.msg)
+          }
+        },
+      })
+  </script>
+</body>
+</html>
